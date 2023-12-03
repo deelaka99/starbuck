@@ -10,6 +10,8 @@ export default {
       'green':'#00DD00',
       'white': '#ffffff',
       'black':'#000000',
+      'grey':'#484848',
+      'blue':'#6EB6FF',
     },
     fontFamily: {
       inter: ["Inter", "sans-serif"],
