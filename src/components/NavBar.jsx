@@ -6,11 +6,18 @@ import User from "../assets/pictures/user.jpg";
 function NavBar() {
   const navigate = useNavigate();
   const [date, setDate] = useState(new Date());
+  const [greet, setGreet] = useState("");
 
   useEffect(() => {
     const timer = setInterval(() => {
       setDate(new Date());
     }, 1000);
+
+    var hours = date.getHours();
+
+    if (hours < 12) setGreet("morning");
+    else if (hours >= 12 && hours < 17) setGreet("afternoon");
+    else if (hours >= 17 && hours <= 24) setGreet("evening");
 
     return () => {
       clearInterval(timer);
@@ -38,7 +45,7 @@ function NavBar() {
       <div className="h-full w-1/3 flex">
         <div className="h-full w-2/4 flex justify-left items-center pl-2">
           <p className="font-inter text-white tablet:text-[15px] laptop:text-[18px] desktop:text-[14px]">
-            Good Morning! Peter Jhon
+            {"Good "+greet+"! Peter Jhon"}
           </p>
         </div>
         <div className="h-full w-1/4 tablet:p-2 flex items-center justify-center">
