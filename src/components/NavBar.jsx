@@ -29,7 +29,7 @@ function NavBar() {
     navigate("/");
   };
   return (
-    <div className="bg-green tablet:w-full tablet:h-[100px] laptop:h-[110px] desktop:h-[60px] flex">
+    <div className="bg-green tablet:w-full tablet:h-[6vh] laptop:h-[8vh] desktop:h-[8vh] flex">
       <div className="h-full w-1/3 flex justify-left items-center tablet:pl-4 laptop:pl-8">
         <img
           src={Logo}
