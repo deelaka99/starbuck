@@ -1,10 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Logo from "../assets/pictures/logo.png";
 import User from "../assets/pictures/user.jpg";
 
 function NavBar() {
   const navigate = useNavigate();
+  const [date, setDate] = useState(new Date());
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setDate(new Date());
+    }, 1000);
+
+    return () => {
+      clearInterval(timer);
+    };
+  }, []);
+
   const logout = () => {
     localStorage.removeItem("gmail");
     navigate("/");
@@ -20,7 +32,7 @@ function NavBar() {
       </div>
       <div className="h-full w-1/3 flex justify-center items-center">
         <p className="font-inter font-semibold text-white tablet:text-[18px] laptop:text-[22px] desktop:text-[18px]">
-          04/12/2023 | Sunday
+          {date.toDateString()}
         </p>
       </div>
       <div className="h-full w-1/3 flex">
@@ -39,7 +51,10 @@ function NavBar() {
           </div>
         </div>
         <div className="h-full w-1/4 flex items-center justify-center">
-          <button onClick={logout} className="bg-red tablet:h-[35px] tablet:w-[50px] tablet:text-[12px] laptop:h-[40px] laptop:w-[60px] laptop:text-[15px] text-white rounded-lg shadow-black shadow-sm">
+          <button
+            onClick={logout}
+            className="bg-red tablet:h-[35px] tablet:w-[50px] tablet:text-[12px] laptop:h-[40px] laptop:w-[60px] laptop:text-[15px] text-white rounded-lg shadow-black shadow-sm"
+          >
             Logout
           </button>
         </div>
