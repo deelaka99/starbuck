@@ -17,6 +17,11 @@ export default {
       inter: ["Inter", "sans-serif"],
       jomhuria: ["Jomhuria", "cursive"]
     },
+    screens:{
+      'tablet':'640px',
+      'laptop':'1024px',
+      'desktop':'1280px',
+    },
   },
   plugins: [],
 }
