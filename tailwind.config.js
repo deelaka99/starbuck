@@ -8,9 +8,10 @@ export default {
     colors: {
       transparent: 'transparent',
       'green':'#00DD00',
+      'darkGreen':'#01532C',
       'white': '#ffffff',
       'black':'#000000',
-      'grey':'#484848',
+      'grey':'#333333',
       'blue':'#6EB6FF',
       'red' :'#FF0000',
     },
