@@ -1,0 +1,110 @@
+[
+    {
+        "id": 1001,
+        "name": "Carrot",
+        "price": 125,
+        "quantity": 5,
+        "image1": "https://images.pexels.com/photos/143133/pexels-photo-143133.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "image2": "https://images.pexels.com/photos/65174/pexels-photo-65174.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "image3": "https://images.pexels.com/photos/1306559/pexels-photo-1306559.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },
+    {
+        "id": 1002,
+        "name": "Banana",
+        "price": 170,
+        "quantity": 15,
+        "image1": "https://images.pexels.com/photos/5966630/pexels-photo-5966630.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "image2": "https://images.pexels.com/photos/365810/pexels-photo-365810.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "image3": "https://images.pexels.com/photos/2875814/pexels-photo-2875814.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },
+    {
+        "id": 1003,
+        "name": "Avacado",
+        "price": 100,
+        "quantity": 75,
+        "image1": "https://images.pexels.com/photos/557659/pexels-photo-557659.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "image2": "https://images.pexels.com/photos/6157049/pexels-photo-6157049.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "image3": "https://images.pexels.com/photos/2228553/pexels-photo-2228553.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+        "id": 1004,
+        "name": "Tomatoes",
+        "price": 170,
+        "quantity": 15,
+        "image1": "https://images.pexels.com/photos/533280/pexels-photo-533280.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "image2": "https://images.pexels.com/photos/373019/pexels-photo-373019.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "image3": "https://images.pexels.com/photos/209401/pexels-photo-209401.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+        "id": 1005,
+        "name": "Cheese",
+        "price": 500,
+        "quantity": 7,
+        "image1": "https://images.pexels.com/photos/773253/pexels-photo-773253.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "image2": "https://images.pexels.com/photos/3756480/pexels-photo-3756480.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "image3": "https://images.pexels.com/photos/4109953/pexels-photo-4109953.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+        "id": 1006,
+        "name": "Honey",
+        "price": 180,
+        "quantity": 18,
+        "image1": "https://images.pexels.com/photos/33260/honey-sweet-syrup-organic.jpg?auto=compress&cs=tinysrgb&w=600",
+        "image2": "https://images.pexels.com/photos/1638280/pexels-photo-1638280.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "image3": "https://images.pexels.com/photos/302163/pexels-photo-302163.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+        "id": 1007,
+        "name": "Watermelon",
+        "price": 120,
+        "quantity": 25,
+        "image1": "https://images.pexels.com/photos/143133/pexels-photo-143133.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "image2": "https://images.pexels.com/photos/3429784/pexels-photo-3429784.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "image3": "https://images.pexels.com/photos/3607/fruit-melon-watermelon.jpg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+        "id": 1008,
+        "name": "Fresh milk",
+        "price": 175,
+        "quantity": 15,
+        "image1": "https://images.pexels.com/photos/5946720/pexels-photo-5946720.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "image2": "https://images.pexels.com/photos/5947086/pexels-photo-5947086.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "image3": "https://images.pexels.com/photos/5946724/pexels-photo-5946724.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },
+    {
+        "id": 1009,
+        "name": "Tea",
+        "price": 100,
+        "quantity": 19,
+        "image1": "https://images.pexels.com/photos/220704/pexels-photo-220704.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "image2": "https://images.pexels.com/photos/2633398/pexels-photo-2633398.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "image3": "https://images.pexels.com/photos/1417945/pexels-photo-1417945.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+        "id": 1010,
+        "name": "Sauce",
+        "price": 195,
+        "quantity": 98,
+        "image1": "https://images.pexels.com/photos/6941017/pexels-photo-6941017.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "image2": "https://images.pexels.com/photos/6941037/pexels-photo-6941037.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "image3": "https://images.pexels.com/photos/6941051/pexels-photo-6941051.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+        "id": 1011,
+        "name": "Mango",
+        "price": 127,
+        "quantity": 125,
+        "image1": "https://images.pexels.com/photos/39303/mango-tropical-fruit-juicy-sweet-39303.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "image2": "https://images.pexels.com/photos/4955253/pexels-photo-4955253.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "image3": "https://images.pexels.com/photos/4023132/pexels-photo-4023132.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+        "id": 1012,
+        "name": "Grapes",
+        "price": 115,
+        "quantity": 85,
+        "image1": "https://images.pexels.com/photos/708777/pexels-photo-708777.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "image2": "https://images.pexels.com/photos/1098537/pexels-photo-1098537.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "image3": "https://images.pexels.com/photos/5644988/pexels-photo-5644988.jpeg?auto=compress&cs=tinysrgb&w=600"
+    }
+]
