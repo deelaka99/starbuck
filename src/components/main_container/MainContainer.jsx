@@ -14,8 +14,9 @@ function MainContainer() {
 
   return (
     <div className="laptop:flex w-full tablet:h-[82vh] laptop:h-[78vh] desktop:h-[78vh] text-white">
+      {/* for Tablet Item container*/}
       <div className="laptop:hidden tablet:h-[25vh] tablet:w-full bg-darkGrey">
-         <div className="flex items-center justify-center w-full h-1/6 p-1">
+        <div className="flex items-center justify-center w-full h-1/6 p-1">
           <div className="w-1/2 h-5/6 flex">
             <div className="h-full w-full flex items-center justify-center">
               <input
@@ -44,10 +45,25 @@ function MainContainer() {
           ))}
         </div>
       </div>
+      {/* Tablet pricing panel */}
       <div className="laptop:hidden tablet:h-[75vh] tablet:w-full bg-grey ">
-        tablet calc
+        {/* Item Entry */}
+        <div className="w-full h-[23vh] flex items-center justify-center p-5">
+          <PricingPanel />
+        </div>
+        {/* Item Table */}
+        <div className="bg-blue w-full h-[52vh]"></div>
       </div>
-      <div className="laptop:h-full laptop:w-3/4 bg-grey ">lap calc</div>
+      {/* Laptop pricing panel */}
+      <div className="laptop:h-full laptop:w-3/4 bg-grey ">
+        {/* Item Entry */}
+        <div className="w-full h-1/3 flex items-center justify-center p-5">
+          <PricingPanel />
+        </div>
+        {/* Item Table */}
+        <div className="bg-blue w-full h-2/3"></div>
+      </div>
+      {/* Laptop Item container */}
       <div className="laptop:h-full laptop:w-1/4 bg-darkGrey ">
         <div className="w-full h-1/6 flex items-center justify-center">
           <div className="h-full w-full flex items-center justify-center">
@@ -76,8 +92,6 @@ function MainContainer() {
           ))}
         </div>
       </div>
-      {/* <ItemContainer />
-      <PricingPanel /> */}
     </div>
   );
 }

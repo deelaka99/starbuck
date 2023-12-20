@@ -13,6 +13,7 @@ export default {
       'black':'#000000',
       'lightGrey':'#D9D9D9',
       'lightGrey1':'#BBBBBB',
+      'lightGrey2':'#525252',
       'grey':'#333333',
       'darkGrey':'#282828',
       'blue':'#6EB6FF',
