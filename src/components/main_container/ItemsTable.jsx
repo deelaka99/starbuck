@@ -18,7 +18,7 @@ function ItemsTable(props) {
     <div className="flex items-center justify-center p-5 tablet:h-[33vh] tablet:w-full laptop:h-full laptop:w-full">
       <div className="h-full w-full rounded shadow-lg overflow-auto">
         <table className="w-full">
-          <thead className="bg-green  sticky top-0">
+          <thead className="bg-green sticky top-0 border-l border-r border-green">
             <tr className="h-[4vh] text-white font-semibold">
               <th className="w-1/6 py-4">No</th>
               <th className="w-1/6 py-4">Item</th>
@@ -52,7 +52,7 @@ function ItemsTable(props) {
                 <td className="py-4 px-3 flex items-center justify-center">
                   <button
                     onClick={() => handleRemoveItem(index)}
-                    className="bg-red text-white px-2 py-1 rounded shadow"
+                    className="bg-red text-white px-2 py-1 rounded shadow hover:shadow-lg hover:opacity-90"
                   >
                     Remove
                   </button>
