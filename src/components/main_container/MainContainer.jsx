@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import ItemContainer from "./ItemContainer";
 import PricingPanel from "./PricingPanel";
+import ItemsTable from "./ItemsTable";
 
 function MainContainer() {
   const [data, setData] = useState(itemData);
@@ -64,7 +65,9 @@ function MainContainer() {
           <PricingPanel pricingId={id} pricingName={name} pricingQty={qty} />
         </div>
         {/* Item Table */}
-        <div className="bg-blue w-full h-[52vh]"></div>
+        <div className="w-full h-[52vh]">
+          <ItemsTable />
+        </div>
       </div>
       {/* Laptop pricing panel */}
       <div className="laptop:h-full laptop:w-3/4 bg-grey ">
