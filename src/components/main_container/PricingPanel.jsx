@@ -6,17 +6,45 @@ function PricingPanel(props) {
   const [id, setId] = useState("");
   const [name, setName] = useState("");
   const [qty, setQty] = useState("");
+  const [unitPrice, setUnitPrice] = useState("");
 
   useEffect(() => {
     setId(props.pricingId);
     setName(props.pricingName);
     setQty(props.pricingQty);
-  }, [props.pricingId, props.pricingName, props.pricingQty]);
+    setUnitPrice(props.pricingUPrice);
+  }, [
+    props.pricingId,
+    props.pricingName,
+    props.pricingQty,
+    props.pricingUPrice,
+  ]);
+
+  const addItemToArray = () => {
+    // Checking for if any field is empty before adding to the array
+    if (id && name && qty && unitPrice) {
+      const newItem = {
+        id: id,
+        name: name,
+        qty: qty,
+        unitPrice: unitPrice,
+      };
+
+      // Calling the function passed from MainContainer to update items array
+      props.updateItems(newItem);
+
+      // Clear the input fields
+      clear();
+    } else {
+      console.error("Incomplete item data. Cannot add to the array.");
+    }
+  };
 
   const clear = () => {
     setId("");
     setName("");
     setQty("");
+    setUnitPrice("");
   };
 
   return (
@@ -68,7 +96,10 @@ function PricingPanel(props) {
         </div>
         <div className="flex h-full w-1/2">
           <div className="flex items-start justify-end h-full w-1/2 pr-1">
-            <button className="bg-blue tablet:w-11/12 tablet:h-3/5 laptop:w-5/6 font-inter text-lg font-semibold rounded-md shadow shadow-black hover:shadow-md hover:shadow-black hover:opacity-90 active:opacity-95">
+            <button
+              onClick={addItemToArray}
+              className="bg-blue tablet:w-11/12 tablet:h-3/5 laptop:w-5/6 font-inter text-lg font-semibold rounded-md shadow shadow-black hover:shadow-md hover:shadow-black hover:opacity-90 active:opacity-95"
+            >
               <FontAwesomeIcon className="text-xl" icon={faCirclePlus} />
               &nbsp; Add
             </button>

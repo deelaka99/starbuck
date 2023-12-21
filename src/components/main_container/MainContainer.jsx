@@ -11,15 +11,28 @@ function MainContainer() {
   const [id, setID] = useState("");
   const [name, setName] = useState("");
   const [qty, setQty] = useState("");
+  const [unitPrice, setUnitPrice] = useState("");
+
+  //user brought items
+  const [items, setItems] = useState([]);
 
   useEffect(() => {
     setData(itemData);
   }, []);
 
-  const itemShowInPricingPanel = (id, name, qty) => {
+  const updateItems = (newItem) => {
+    setItems((prevItems) => [...prevItems, newItem]);
+  };
+
+  const updateAfterItemsRemoval = (newItem) => {
+    setItems(newItem);
+  };
+
+  const itemShowInPricingPanel = (id, name, qty, uPrice) => {
     setID(id);
     setName(name);
     setQty(qty);
+    setUnitPrice(uPrice);
   };
 
   return (
@@ -52,7 +65,12 @@ function MainContainer() {
               img2={item.image2}
               img3={item.image3}
               onClick={() =>
-                itemShowInPricingPanel(item.id, item.name, item.quantity)
+                itemShowInPricingPanel(
+                  item.id,
+                  item.name,
+                  item.quantity,
+                  item.price
+                )
               }
             />
           ))}
@@ -62,21 +80,34 @@ function MainContainer() {
       <div className="laptop:hidden tablet:h-[75vh] tablet:w-full bg-grey ">
         {/* Item Entry */}
         <div className="w-full h-[23vh] flex items-center justify-center p-5">
-          <PricingPanel pricingId={id} pricingName={name} pricingQty={qty} />
+          <PricingPanel
+            pricingId={id}
+            pricingName={name}
+            pricingQty={qty}
+            pricingUPrice={unitPrice}
+            updateItems={updateItems}
+          />
         </div>
         {/* Item Table */}
         <div className="w-full h-[52vh]">
-          <ItemsTable />
+          <ItemsTable items={items} updateItems={updateAfterItemsRemoval}/>
         </div>
       </div>
       {/* Laptop pricing panel */}
       <div className="laptop:h-full laptop:w-3/4 bg-grey ">
         {/* Item Entry */}
         <div className="w-full h-1/3 flex items-center justify-center p-5">
-          <PricingPanel pricingId={id} pricingName={name} pricingQty={qty} />
+          <PricingPanel
+            pricingId={id}
+            pricingName={name}
+            pricingQty={qty}
+            pricingUPrice={unitPrice}
+          />
         </div>
         {/* Item Table */}
-        <div className="bg-blue w-full h-2/3"></div>
+        <div className="bg-blue w-full h-2/3">
+        <ItemsTable items={items} updateItems={updateAfterItemsRemoval}/>
+        </div>
       </div>
       {/* Laptop Item container */}
       <div className="laptop:h-full laptop:w-1/4 bg-darkGrey ">
@@ -104,7 +135,12 @@ function MainContainer() {
               img2={item.image2}
               img3={item.image3}
               onClick={() =>
-                itemShowInPricingPanel(item.id, item.name, item.quantity)
+                itemShowInPricingPanel(
+                  item.id,
+                  item.name,
+                  item.quantity,
+                  item.price
+                )
               }
             />
           ))}
