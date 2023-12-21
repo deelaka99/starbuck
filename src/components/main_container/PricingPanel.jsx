@@ -1,8 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCirclePlus, faTrash } from "@fortawesome/free-solid-svg-icons";
 
-function PricingPanel() {
+function PricingPanel(props) {
+  const [id, setId] = useState("");
+  const [name, setName] = useState("");
+  const [qty, setQty] = useState("");
+
+  useEffect(() => {
+    setId(props.pricingId);
+    setName(props.pricingName);
+    setQty(props.pricingQty);
+  }, [props.pricingId, props.pricingName, props.pricingQty]);
+
+  const clear = () => {
+    setId("");
+    setName("");
+    setQty("");
+  };
+
   return (
     <div className="w-full h-full bg-grey border border-lightGrey rounded shadow">
       {/* row1 */}
@@ -15,6 +31,7 @@ function PricingPanel() {
             <input
               placeholder="Enter item ID"
               type="text"
+              value={id}
               className="p-3 bg-lightGrey1 font-inter placeholder:text-white tablet:h-[40px] tablet:w-[220px] laptop:h-[38px] laptop:w-[280px] rounded border-2 focus:outline-none focus:ring-4 focus:border-2 focus:border-lightGrey"
             />
           </div>
@@ -27,6 +44,7 @@ function PricingPanel() {
             <input
               placeholder="Enter item name"
               type="text"
+              value={name}
               className="p-3 bg-lightGrey1 font-inter placeholder:text-white tablet:h-[40px] tablet:w-[220px] laptop:h-[38px] laptop:w-[280px] rounded border-2 focus:outline-none focus:ring-4 focus:border-2 focus:border-lightGrey"
             />
           </div>
@@ -42,6 +60,8 @@ function PricingPanel() {
             <input
               placeholder="Enter item Quantity"
               type="text"
+              value={qty}
+              onChange={(event) => setQty(event.target.value)}
               className="p-3 bg-lightGrey1 font-inter placeholder:text-white tablet:h-[40px] tablet:w-[220px] laptop:h-[38px] laptop:w-[280px] rounded border-2 focus:outline-none focus:ring-4 focus:border-2 focus:border-lightGrey"
             />
           </div>
@@ -54,7 +74,10 @@ function PricingPanel() {
             </button>
           </div>
           <div className="flex items-start justify-start h-full w-1/2 pl-1">
-            <button className="bg-red tablet:w-11/12 tablet:h-3/5 laptop:w-5/6 font-inter text-lg font-semibold rounded-md shadow shadow-black hover:shadow-md hover:shadow-black hover:opacity-90 active:opacity-95">
+            <button
+              onClick={clear}
+              className="bg-red tablet:w-11/12 tablet:h-3/5 laptop:w-5/6 font-inter text-lg font-semibold rounded-md shadow shadow-black hover:shadow-md hover:shadow-black hover:opacity-90 active:opacity-95"
+            >
               <FontAwesomeIcon className="text-xl" icon={faTrash} />
               &nbsp;&nbsp;Clear
             </button>

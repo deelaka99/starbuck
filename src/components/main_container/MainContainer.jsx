@@ -7,10 +7,19 @@ import PricingPanel from "./PricingPanel";
 
 function MainContainer() {
   const [data, setData] = useState(itemData);
+  const [id, setID] = useState("");
+  const [name, setName] = useState("");
+  const [qty, setQty] = useState("");
 
   useEffect(() => {
     setData(itemData);
   }, []);
+
+  const itemShowInPricingPanel = (id, name, qty) => {
+    setID(id);
+    setName(name);
+    setQty(qty);
+  };
 
   return (
     <div className="laptop:flex w-full tablet:h-[82vh] laptop:h-[78vh] desktop:h-[78vh] text-white">
@@ -41,6 +50,9 @@ function MainContainer() {
               img1={item.image1}
               img2={item.image2}
               img3={item.image3}
+              onClick={() =>
+                itemShowInPricingPanel(item.id, item.name, item.quantity)
+              }
             />
           ))}
         </div>
@@ -49,7 +61,7 @@ function MainContainer() {
       <div className="laptop:hidden tablet:h-[75vh] tablet:w-full bg-grey ">
         {/* Item Entry */}
         <div className="w-full h-[23vh] flex items-center justify-center p-5">
-          <PricingPanel />
+          <PricingPanel pricingId={id} pricingName={name} pricingQty={qty} />
         </div>
         {/* Item Table */}
         <div className="bg-blue w-full h-[52vh]"></div>
@@ -58,7 +70,7 @@ function MainContainer() {
       <div className="laptop:h-full laptop:w-3/4 bg-grey ">
         {/* Item Entry */}
         <div className="w-full h-1/3 flex items-center justify-center p-5">
-          <PricingPanel />
+          <PricingPanel pricingId={id} pricingName={name} pricingQty={qty} />
         </div>
         {/* Item Table */}
         <div className="bg-blue w-full h-2/3"></div>
@@ -88,6 +100,9 @@ function MainContainer() {
               img1={item.image1}
               img2={item.image2}
               img3={item.image3}
+              onClick={() =>
+                itemShowInPricingPanel(item.id, item.name, item.quantity)
+              }
             />
           ))}
         </div>

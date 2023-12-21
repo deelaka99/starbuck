@@ -16,7 +16,10 @@ function ItemContainer(props) {
     return () => clearInterval(interval);
   });
   return (
-    <div className="bg-lightGrey p-2 tablet:h-[220px] tablet:w-[180px] laptop:h-[200px] laptop:w-[146px] rounded-md shadow-md tablet:mr-[6px] laptop:mr-[4px] laptop:mt-[4px] hover:bg-lightGrey1 active:bg-white">
+    <div
+      onClick={props.onClick}
+      className="bg-lightGrey p-2 tablet:h-[220px] tablet:w-[180px] laptop:h-[200px] laptop:w-[146px] rounded-md shadow-md tablet:mr-[6px] laptop:mr-[4px] laptop:mt-[4px] hover:bg-lightGrey1 active:bg-white"
+    >
       <div className="tablet:h-[110px] tablet:w-[160px] laptop:h-[100px] laptop:w-[130px] bg-white rounded-md">
         <img
           className="h-full w-full rounded-md transition-opacity duration-500 border shadow-lg"
