@@ -90,7 +90,7 @@ function MainContainer() {
         </div>
         {/* Item Table */}
         <div className="w-full h-[52vh]">
-          <ItemsTable items={items} updateItems={updateAfterItemsRemoval}/>
+          <ItemsTable items={items} updateItems={updateAfterItemsRemoval} />
         </div>
       </div>
       {/* Laptop pricing panel */}
@@ -102,11 +102,12 @@ function MainContainer() {
             pricingName={name}
             pricingQty={qty}
             pricingUPrice={unitPrice}
+            updateItems={updateItems}
           />
         </div>
         {/* Item Table */}
-        <div className="bg-blue w-full h-2/3">
-        <ItemsTable items={items} updateItems={updateAfterItemsRemoval}/>
+        <div className="w-full h-2/3">
+          <ItemsTable items={items} updateItems={updateAfterItemsRemoval} />
         </div>
       </div>
       {/* Laptop Item container */}
