@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import itemData from "../../data/itemData.json";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import ItemContainer from "./ItemContainer";
 import PricingPanel from "./PricingPanel";
 import ItemsTable from "./ItemsTable";
