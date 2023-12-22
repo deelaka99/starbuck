@@ -52,14 +52,11 @@ function MainContainer(props) {
             <div className="h-full w-full flex items-center justify-center">
               <input
                 type="text"
-                className="rounded-tl-md rounded-bl-md pt-1 pb-1 pr-1 pl-3 bg-lightGrey border text-grey focus:outline-none focus:ring-2 focus:border-white"
-                placeholder="Search..."
+                className="rounded-md w-2/3 pt-1 pb-1 pr-1 pl-3 bg-lightGrey border text-grey focus:outline-none focus:ring-4 focus:border-white placeholder:text-center"
+                placeholder="⌕ Search..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
-              <button className="bg-blue rounded-tr-md rounded-br-md pt-1 pb-1 pl-2 pr-3 border border-blue active:bg-darkGrey active:border-white">
-                <FontAwesomeIcon icon={faMagnifyingGlass} />
-              </button>
             </div>
           </div>
         </div>
@@ -132,14 +129,11 @@ function MainContainer(props) {
           <div className="h-full w-full flex items-center justify-center">
             <input
               type="text"
-              className="rounded-tl-full rounded-bl-full pt-1 pb-1 pr-1 pl-3 bg-lightGrey border text-grey focus:outline-none focus:ring-4 focus:border-white"
-              placeholder="Search..."
+              className="w-2/3 rounded-full pt-1 pb-1 pr-1 pl-3 bg-lightGrey border text-grey focus:outline-none focus:ring-4 focus:border-white placeholder:text-center"
+              placeholder="⌕ Search..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
-            <button className="bg-blue rounded-tr-full rounded-br-full pt-1 pb-1 pl-2 pr-3 border border-blue active:bg-darkGrey active:border-white">
-              <FontAwesomeIcon icon={faMagnifyingGlass} />
-            </button>
           </div>
         </div>
         <div className=" w-full h-5/6 p-2 flex flex-wrap justify-center items-center overflow-x-hidden">
