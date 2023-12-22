@@ -69,14 +69,14 @@ function Footer(props) {
       <div className="flex w-full tablet:h-[9vh] laptop:h-[11vh] desktop:h-[11vh]">
         <div className="flex items-center justify-start h-full w-1/3 tablet:pl-4 laptop:pl-8">
           <p className="text-white font-inter tablet:text-[18px] laptop:text-[20px]">
-            <span className="font-bold">Total:</span> Rs.{total} <br />{" "}
-            <span className="font-bold">Discount:</span> Rs.{discount}
+            <span className="font-bold tablet:text-[16x] laptop:text-[18px]">Total:</span> Rs.{total} <br />{" "}
+            <span className="font-bold tablet:text-[16x] laptop:text-[18px]">Discount:</span> Rs.{discount}
           </p>
         </div>
         <div className="flex items-center justify-start h-full w-1/3 tablet:pl-4">
           <p className="text-white font-inter tablet:text-[18px] laptop:text-[20px]">
-            <span className="font-bold">Items count:</span> {itemCount} <br />{" "}
-            <span className="font-bold tablet:text-[20px] laptop:text-[24px]">
+            <span className="font-bold tablet:text-[16x] laptop:text-[18px]">Items count:</span> {itemCount} <br />{" "}
+            <span className="font-bold tablet:text-[22px] laptop:text-[24px]">
               Final total:
             </span>{" "}
             Rs.{total - discount}
@@ -92,7 +92,7 @@ function Footer(props) {
                   setShowPaymentNotAcceptanceModal(true);
                 }
               }}
-              className="bg-darkGreen rounded-lg tablet:p-6 laptop:p-8 desktop:p-4 text-white font-inter font-semibold tablet:text-[20px] laptop:text-[24px] desktop:text-[20px] shadow-black shadow-md hover:shadow-black hover:shadow-lg"
+              className="bg-darkGreen rounded-lg tablet:p-6 laptop:p-3 desktop:p-4 text-white font-inter font-semibold tablet:text-[20px] laptop:text-[15px] desktop:text-[20px] shadow-black shadow-md hover:shadow-black hover:shadow-lg"
             >
               Proceed to Pay
             </button>
@@ -100,7 +100,7 @@ function Footer(props) {
         </div>
       </div>
       <div className="w-full h-[3vh] flex items-center justify-center ">
-        <p className="text-white font-inter tablet:text-[12px] laptop:text-[16px] desktop:text-[13px]">
+        <p className="text-white font-inter tablet:text-[12px] laptop:text-[10px] desktop:text-[13px]">
           © PDW Kariyawasam
         </p>
       </div>
