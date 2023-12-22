@@ -5,10 +5,11 @@ function Footer(props) {
   const [total, setTotal] = useState(0);
   const [discount, setDiscount] = useState(10);
   const [itemCount, setItemCount] = useState(0);
+  const [clearAll, setClearAll] = useState(false);
+  const [showPaymentAcceptanceModal, setShowPaymentAcceptanceModal] =
+    useState(false);
 
   useEffect(() => {
-    setItems(props.broughtItems);
-
     // Iterate through items and calculate total price
     let totalPrice = 0;
     let count = 0;
@@ -16,10 +17,30 @@ function Footer(props) {
       totalPrice += item.qty * item.unitPrice;
       count += item.qty;
     });
-    setTotal(totalPrice.toFixed(2));
-    setItemCount(count);
-    setDiscount((total * 0.05).toFixed(2));
-  }, [props.broughtItems]);
+
+    if (items.length > 0) {
+      setTotal(totalPrice.toFixed(2));
+      setItemCount(count);
+      setDiscount((totalPrice * 0.05).toFixed(2));
+    } else {
+      setTotal(0);
+      setItemCount(0);
+      setDiscount(0);
+    }
+
+    if (clearAll) {
+      props.clearAllItems();
+      setItems([]);
+      setTotal(0);
+      setItemCount(0);
+      setDiscount(0);
+      setShowPaymentAcceptanceModal(false);
+      setClearAll(false);
+      console.log(items);
+    } else {
+      setItems(props.broughtItems);
+    }
+  }, [props.broughtItems, items, clearAll]);
 
   return (
     <div className="bg-green w-full tablet:h-[12vh] laptop:h-[14vh] desktop:h-[14vh]">
@@ -41,7 +62,10 @@ function Footer(props) {
         </div>
         <div className="h-full w-1/3">
           <div className="h-full w-full flex items-center justify-end tablet:pr-4 laptop:pr-8">
-            <button className="bg-darkGreen rounded-lg tablet:p-6 laptop:p-8 desktop:p-4 text-white font-inter font-semibold tablet:text-[20px] laptop:text-[24px] desktop:text-[20px] shadow-black shadow-md hover:shadow-black hover:shadow-lg">
+            <button
+              onClick={() => setShowPaymentAcceptanceModal(true)}
+              className="bg-darkGreen rounded-lg tablet:p-6 laptop:p-8 desktop:p-4 text-white font-inter font-semibold tablet:text-[20px] laptop:text-[24px] desktop:text-[20px] shadow-black shadow-md hover:shadow-black hover:shadow-lg"
+            >
               Proceed to Pay
             </button>
           </div>
@@ -52,6 +76,59 @@ function Footer(props) {
           © PDW Kariyawasam
         </p>
       </div>
+      {/**Item adding unsucess modal */}
+      {showPaymentAcceptanceModal ? (
+        <div>
+          <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none text-white">
+            <div className="relative w-auto my-6 mx-auto max-w-3xl">
+              {/*content*/}
+              <div className="p-5 rounded-lg shadow-lg relative flex flex-col w-full bg-green border-2 outline-none focus:outline-none">
+                {/*header*/}
+                <div className="flex items-start justify-between p-2 rounded-t">
+                  <h3 className="text-sm">Notification</h3>
+                  <button
+                    className="ml-auto bg-red rounded-sm border-0 text-lg font-semibold drop-shadow-md active:bg-white"
+                    onClick={() => setShowPaymentAcceptanceModal(false)}
+                  >
+                    <span className=" drop-shadow-lg shadow-black h-6 w-6 text-white flex items-center justify-center active:text-grey">
+                      ×
+                    </span>
+                  </button>
+                </div>
+                {/*body*/}
+                <div className="relative p-6 flex flex-col">
+                  <h3 className="text-2xl font-semibold text-center">
+                    Do you want to proceed the payment?
+                  </h3>
+                  <p>&nbsp;</p>
+                  <div className="flex items-center justify-center gap-7">
+                    <button
+                      onClick={() => {
+                        console.log("Yes button clicked");
+                        setClearAll(true);
+                        props.clearAllItems();
+                      }}
+                      className="font-inter font-medium text-xl active:text-grey"
+                    >
+                      Yes
+                    </button>
+                    <button
+                      onClick={() => {
+                        setShowPaymentAcceptanceModal(false);
+                      }}
+                      className="font-inter font-medium text-xl text-red active:text-grey"
+                    >
+                      No <span>(5)</span>
+                    </button>
+                  </div>
+                </div>
+                {/*footer*/}
+              </div>
+            </div>
+          </div>
+          <div className="rounded-lg opacity-50 fixed inset-0 z-40 bg-black"></div>
+        </div>
+      ) : null}
     </div>
   );
 }

@@ -5,13 +5,13 @@ function ItemsTable(props) {
 
   useEffect(() => {
     setItems(props.items);
-  }, [props.items, items, props.updateItems]);
+  }, [props.items]);
 
   const handleRemoveItem = (index) => {
     const updatedItems = [...items];
     updatedItems.splice(index, 1);
     setItems(updatedItems);
-    props.updateItems(updatedItems);
+    props.updateTableItems(updatedItems);
   };
 
   return (

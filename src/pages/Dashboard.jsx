@@ -8,15 +8,19 @@ function Dashboard() {
 
   useEffect(() => {}, [items]);
 
-  const updateItems = (newItem) => {
+  const updateDashboardItems = (newItem) => {
     setItems(newItem);
   };
+
+  const clearBroughtItemsToFooter = () =>{
+    setItems([]);
+  }
 
   return (
     <div className="h-screen w-screen overflow-hidden">
       <NavBar />
-      <MainContainer updateItems={updateItems} />
-      <Footer broughtItems={items} />
+      <MainContainer updateDashboardItems={updateDashboardItems} />
+      <Footer broughtItems={items} clearAllItems = {clearBroughtItemsToFooter}/>
     </div>
   );
 }

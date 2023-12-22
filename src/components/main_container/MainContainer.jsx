@@ -18,12 +18,12 @@ function MainContainer(props) {
 
   useEffect(() => {
     setData(itemData);
-    props.updateItems(items);
-  }, []);
+    props.updateDashboardItems(items);
+  }, [items, props.updateDashboardItems]);
 
   const updateItems = (newItem) => {
     setItems((prevItems) => [...prevItems, newItem]);
-    props.updateItems([...items, newItem]);
+    props.updateDashboardItems([...items, newItem]);
   };
 
   const updateAfterItemsRemoval = (newItem) => {
@@ -92,7 +92,7 @@ function MainContainer(props) {
         </div>
         {/* Item Table */}
         <div className="w-full h-[52vh]">
-          <ItemsTable items={items} updateItems={updateAfterItemsRemoval} />
+          <ItemsTable items={items} updateTableItems={updateAfterItemsRemoval} />
         </div>
       </div>
       {/* Laptop pricing panel */}
@@ -109,7 +109,7 @@ function MainContainer(props) {
         </div>
         {/* Item Table */}
         <div className="w-full h-2/3">
-          <ItemsTable items={items} updateItems={updateAfterItemsRemoval} />
+          <ItemsTable items={items} updateTableItems={updateAfterItemsRemoval} />
         </div>
       </div>
       {/* Laptop Item container */}
