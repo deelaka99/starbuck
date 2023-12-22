@@ -16,7 +16,7 @@ function ItemsTable(props) {
 
   return (
     <div className="flex items-center justify-center p-5 tablet:h-[33vh] tablet:w-full laptop:h-full laptop:w-full">
-      <div className="h-full w-full rounded shadow-lg overflow-auto">
+      <div className="h-full w-full rounded shadow-sm shadow-lightGrey1 overflow-auto">
         <table className="w-full">
           <thead className="bg-green sticky top-0 border-l border-r border-green">
             <tr className="h-[4vh] text-white font-semibold">
