@@ -12,6 +12,7 @@ function MainContainer(props) {
   const [name, setName] = useState("");
   const [qty, setQty] = useState("");
   const [unitPrice, setUnitPrice] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
 
   //user brought items
   const [items, setItems] = useState([]);
@@ -37,6 +38,11 @@ function MainContainer(props) {
     setUnitPrice(uPrice);
   };
 
+  // Filter items based on the first two letters of the name
+  const filteredItems = data.filter((item) =>
+    item.name.toLowerCase().startsWith(searchTerm.toLowerCase().slice(0, 2))
+  );
+
   return (
     <div className="laptop:flex w-full tablet:h-[82vh] laptop:h-[78vh] desktop:h-[78vh] text-white">
       {/* for Tablet Item container*/}
@@ -48,6 +54,8 @@ function MainContainer(props) {
                 type="text"
                 className="rounded-tl-md rounded-bl-md pt-1 pb-1 pr-1 pl-3 bg-lightGrey border text-grey focus:outline-none focus:ring-2 focus:border-white"
                 placeholder="Search..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
               />
               <button className="bg-blue rounded-tr-md rounded-br-md pt-1 pb-1 pl-2 pr-3 border border-blue active:bg-darkGrey active:border-white">
                 <FontAwesomeIcon icon={faMagnifyingGlass} />
@@ -56,7 +64,7 @@ function MainContainer(props) {
           </div>
         </div>
         <div className="p-2 w-full h-5/6 flex items-center justify-start overflow-y-hidden">
-          {data.map((item) => (
+          {filteredItems.map((item) => (
             <ItemContainer
               key={item.id}
               id={item.id}
@@ -92,7 +100,10 @@ function MainContainer(props) {
         </div>
         {/* Item Table */}
         <div className="w-full h-[52vh]">
-          <ItemsTable items={items} updateTableItems={updateAfterItemsRemoval} />
+          <ItemsTable
+            items={items}
+            updateTableItems={updateAfterItemsRemoval}
+          />
         </div>
       </div>
       {/* Laptop pricing panel */}
@@ -109,7 +120,10 @@ function MainContainer(props) {
         </div>
         {/* Item Table */}
         <div className="w-full h-2/3">
-          <ItemsTable items={items} updateTableItems={updateAfterItemsRemoval} />
+          <ItemsTable
+            items={items}
+            updateTableItems={updateAfterItemsRemoval}
+          />
         </div>
       </div>
       {/* Laptop Item container */}
@@ -120,6 +134,8 @@ function MainContainer(props) {
               type="text"
               className="rounded-tl-full rounded-bl-full pt-1 pb-1 pr-1 pl-3 bg-lightGrey border text-grey focus:outline-none focus:ring-4 focus:border-white"
               placeholder="Search..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
             />
             <button className="bg-blue rounded-tr-full rounded-br-full pt-1 pb-1 pl-2 pr-3 border border-blue active:bg-darkGrey active:border-white">
               <FontAwesomeIcon icon={faMagnifyingGlass} />
@@ -127,7 +143,7 @@ function MainContainer(props) {
           </div>
         </div>
         <div className=" w-full h-5/6 p-2 flex flex-wrap justify-center items-center overflow-x-hidden">
-          {data.map((item) => (
+          {filteredItems.map((item) => (
             <ItemContainer
               key={item.id}
               id={item.id}
