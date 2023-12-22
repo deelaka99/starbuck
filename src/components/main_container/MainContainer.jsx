@@ -6,7 +6,7 @@ import ItemContainer from "./ItemContainer";
 import PricingPanel from "./PricingPanel";
 import ItemsTable from "./ItemsTable";
 
-function MainContainer() {
+function MainContainer(props) {
   const [data, setData] = useState(itemData);
   const [id, setID] = useState("");
   const [name, setName] = useState("");
@@ -18,10 +18,12 @@ function MainContainer() {
 
   useEffect(() => {
     setData(itemData);
+    props.updateItems(items);
   }, []);
 
   const updateItems = (newItem) => {
     setItems((prevItems) => [...prevItems, newItem]);
+    props.updateItems([...items, newItem]);
   };
 
   const updateAfterItemsRemoval = (newItem) => {

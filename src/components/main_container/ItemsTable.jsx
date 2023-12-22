@@ -5,7 +5,7 @@ function ItemsTable(props) {
 
   useEffect(() => {
     setItems(props.items);
-  }, [props.items]);
+  }, [props.items, items, props.updateItems]);
 
   const handleRemoveItem = (index) => {
     const updatedItems = [...items];
